@@ -6,33 +6,24 @@ function PersonalInfo() {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-
-  // Email validation function
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
-
   const handleNext = () => {
     // Check if fields are empty
     if (!name || !email) {
       alert("Please fill out all fields.");
       return;
     }
-
-    // Check if name is at least 2 characters long
     if (name.trim().length < 2) {
       alert("Please enter a valid name (at least 2 characters).");
       return;
     }
-
-    // Validate email format
     if (!isValidEmail(email)) {
       alert("Please enter a valid email address.");
       return;
     }
-
-    // Store data and navigate if all validations pass
     localStorage.setItem("personalInfo", JSON.stringify({ name: name.trim(), email }));
     navigate("/company");
   };
@@ -49,7 +40,6 @@ function PersonalInfo() {
           onChange={(e) => setName(e.target.value)}
         />
       </div>
-
       <div className="form-group">
         <label>Your Email</label>
         <input
@@ -59,7 +49,6 @@ function PersonalInfo() {
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
-
       <button onClick={handleNext}>Next</button>
     </div>
   );
