@@ -17,7 +17,7 @@ A simple and responsive multi-step onboarding form with dashboard display, built
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/tejasvi2005/onboarding-dashboard
+   git clone https://github.com/tejasvi2005/Onboarding-dashboard.git
    cd onboarding-dashboard
 2. Install dependencies:
     npm install
